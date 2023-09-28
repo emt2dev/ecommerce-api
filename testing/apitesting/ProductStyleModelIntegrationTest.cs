@@ -42,6 +42,7 @@ namespace api
                 IsSeasonal = true,
                 IsHoliday = true,
                 IsService = false,
+                ProductType = "Digital",
             };
 
             ProductStylesModel Obj = new ProductStylesModel(psDTO);

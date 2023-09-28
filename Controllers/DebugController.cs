@@ -23,6 +23,16 @@ namespace api.Controllers
         }
 
         [HttpGet]
+        [Route("verify")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)] // if validation fails, send this
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)] // If client issues
+        [ProducesResponseType(StatusCodes.Status200OK)] // if okay
+        public IActionResult VerifyControllerWorks()
+        {
+            return Ok("This is a message to inform you that your controller works.");
+        }
+
+            [HttpGet]
         [Route("new/shopper")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)] // if validation fails, send this
         [ProducesResponseType(StatusCodes.Status500InternalServerError)] // If client issues

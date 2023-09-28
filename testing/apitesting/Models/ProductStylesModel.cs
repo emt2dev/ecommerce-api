@@ -15,7 +15,9 @@ namespace apitesting.Models
         public int ProductId { get; set; }
         public string Keywords { get; set; }
         // Base Quantity (for cart counting)
-        public int Quantity {  get; set; }
+        public int Quantity { get; set; }
+        public int CartCount { get; set; }
+        public int OrderCount { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -40,6 +42,7 @@ namespace apitesting.Models
         public bool IsSeasonal { get; set; }
         public bool IsHoliday { get; set; }
         public bool IsService { get; set; }
+        public string ProductType { get; set; } // polymorphic association
 
         // Methods
         public ProductStylesModel(NewProductStyleModelDTO DTO)
@@ -50,6 +53,7 @@ namespace apitesting.Models
             this.SalePrice = 0;
 
             // DTO
+            this.ProductType = DTO.ProductType;
             this.IsPromotional = DTO.IsPromotional;
             this.IsSeasonal = DTO.IsSeasonal;
             this.IsHoliday = DTO.IsHoliday;
