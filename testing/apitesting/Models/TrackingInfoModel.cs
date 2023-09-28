@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace apitesting.Models
 {
-    public class TrackingInfoModel
+    internal class TrackingInfoModel
     {
         public string TrackingNumber { get; set; }
         public DateTime ExpectedDeliveryDate { get; set; }

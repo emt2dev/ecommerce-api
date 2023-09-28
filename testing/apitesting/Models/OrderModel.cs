@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace apitesting.Models
 {
-    public class OrderModel
+    internal class OrderModel
     {
         public int Id { get; set; }
         public string UserEmail { get; set; }

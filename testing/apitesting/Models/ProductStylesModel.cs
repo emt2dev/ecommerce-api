@@ -1,4 +1,4 @@
-﻿using api.DTOs;
+﻿using apitesting.DTOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace apitesting.Models
 {
-    public class ProductStylesModel
+    internal class ProductStylesModel
     {
         public int Id { get; set; }
         [ForeignKey(nameof(ProductId))]
@@ -34,8 +34,12 @@ namespace apitesting.Models
         public double? WidthInInches { get; set; }
         public double? DepthInInches { get; set; }
         public double? AreaInInches { get; set; }
-        
+        // bools
         public bool IsAvailableForNewCarts { get; set; } // We don't delete products or styles, we mark them unavailable
+        public bool IsPromotional { get; set; }
+        public bool IsSeasonal { get; set; }
+        public bool IsHoliday { get; set; }
+        public bool IsService { get; set; }
 
         // Methods
         public ProductStylesModel(NewProductStyleModelDTO DTO)
@@ -46,6 +50,10 @@ namespace apitesting.Models
             this.SalePrice = 0;
 
             // DTO
+            this.IsPromotional = DTO.IsPromotional;
+            this.IsSeasonal = DTO.IsSeasonal;
+            this.IsHoliday = DTO.IsHoliday;
+            this.IsService = DTO.IsService;
             this.ProductId = DTO.ProductId;
             this.Name = DTO.Name;
             this.Description = DTO.Description;

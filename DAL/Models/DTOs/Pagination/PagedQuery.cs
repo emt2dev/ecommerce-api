@@ -2,7 +2,7 @@
 {
     public class PagedQuery
     {
-        private int _pageSize = GLOSSARY.DefaultPageSize;
+        private int _pageSize = 15;
         public int StartIndex { get; set; }
         public int PageNumber { get; set; }
         public int PageSize

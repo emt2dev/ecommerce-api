@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace apitesting.Models
 {
-    public class CartModel
+    internal class CartModel
     {
         public int Id { get; set; }
         [ForeignKey("Email")]

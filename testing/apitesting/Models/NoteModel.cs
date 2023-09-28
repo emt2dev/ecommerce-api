@@ -1,4 +1,4 @@
-﻿using api.DTOs;
+﻿using apitesting.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace apitesting.Models
 {
-    public class NoteModel
+    internal class NoteModel
     {
         public string EmployeeEmail { get; set; }
         public DateTime CreatedDate { get; set; }

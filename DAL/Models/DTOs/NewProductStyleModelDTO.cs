@@ -19,6 +19,9 @@ namespace api.DAL.DTOs
         public double? LengthInInches { get; set; }
         public double? WidthInInches { get; set; }
         public double? DepthInInches { get; set; }
-        public bool IsDigitalOnly { get; set; }
+        public bool IsPromotional { get; set; }
+        public bool IsSeasonal { get; set; }
+        public bool IsHoliday { get; set; }
+        public bool IsService { get; set; }
     }
 }

@@ -36,7 +36,10 @@ namespace api.DAL.Models
         public double? AreaInInches { get; set; }
         
         public bool IsAvailableForNewCarts { get; set; } // We don't delete products or styles, we mark them unavailable
-        public bool IsDigitalOnly { get; set; }
+        public bool IsPromotional { get; set; }
+        public bool IsSeasonal { get; set; }
+        public bool IsHoliday { get; set; }
+        public bool IsService { get; set; }
 
         // Methods
         public ProductStylesModel(NewProductStyleModelDTO DTO)
@@ -47,7 +50,10 @@ namespace api.DAL.Models
             this.SalePrice = 0;
 
             // DTO
-            this.IsDigitalOnly = DTO.IsDigitalOnly;
+            this.IsPromotional = DTO.IsPromotional;
+            this. = DTO.IsSeasonal;
+            this.IsHoliday = DTO.IsHoliday;
+            this.IsService = DTO.IsService;
             this.ProductId = DTO.ProductId;
             this.Name = DTO.Name;
             this.Description = DTO.Description;

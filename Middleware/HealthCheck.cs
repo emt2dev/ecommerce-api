@@ -10,9 +10,9 @@ namespace api.Middleware
 
             /* Custom Logic and Checks here */
 
-            if (isAPIHealthy) return Task.FromResult(HealthCheckResult.Healthy(GLOSSARY.GreenHealth));
+            if (isAPIHealthy) return Task.FromResult(HealthCheckResult.Healthy("All systems are optimal"));
 
-            return Task.FromResult(new HealthCheckResult(context.Registration.FailureStatus, GLOSSARY.YellowHealth));
+            return Task.FromResult(new HealthCheckResult(context.Registration.FailureStatus, "API experiencing issues"));
         }
     }
 }

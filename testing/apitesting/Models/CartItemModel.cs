@@ -1,4 +1,4 @@
-﻿using api.DTOs;
+﻿using apitesting.DTOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace apitesting.Models
 {
-    public class CartItemModel
+    internal class CartItemModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

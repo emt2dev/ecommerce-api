@@ -37,7 +37,11 @@ namespace api
                 Weight = 1.5,
                 LengthInInches = 6.0,
                 WidthInInches = 3.0,
-                DepthInInches = 2.0
+                DepthInInches = 2.0,
+                IsPromotional = true,
+                IsSeasonal = true,
+                IsHoliday = true,
+                IsService = false,
             };
 
             ProductStylesModel Obj = new ProductStylesModel(psDTO);

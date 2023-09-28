@@ -24,8 +24,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
 /*
  * Dependencies
  */
@@ -160,17 +158,17 @@ builder.Services.AddResponseCaching(options =>
  */
 
 builder.Services.AddHealthChecks()
-    .AddCheck<HealthCheck>("Custom Health Check",
+    .AddCheck<HealthCheck>("VCS Health Check",
     failureStatus: HealthStatus.Degraded,
     tags: new[] { "Custom" }
     )
     .AddSqlServer(CONNECTION_STRING, tags: new[] { "database" })
-    .AddDbContextCheck<vcs.DAL.VCSDbContext>(tags: new[] { "database" });
+    .AddDbContextCheck<DataBaseContext>(tags: new[] { "database" });
 
 var app = builder.Build();
 
 app.UseCors("AllowAll");
-app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<ExceptionHandler>();
 app.UseHttpsRedirection();
 
 /* Add Caching Part Two */
