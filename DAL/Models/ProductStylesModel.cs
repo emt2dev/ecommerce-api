@@ -51,7 +51,7 @@ namespace api.DAL.Models
 
             // DTO
             this.IsPromotional = DTO.IsPromotional;
-            this. = DTO.IsSeasonal;
+            this.IsSeasonal = DTO.IsSeasonal;
             this.IsHoliday = DTO.IsHoliday;
             this.IsService = DTO.IsService;
             this.ProductId = DTO.ProductId;
