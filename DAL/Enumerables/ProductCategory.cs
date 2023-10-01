@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace api.DAL.Enumerables
 {
-    internal enum ProductCategory
+    public enum ProductCategory
     {
         Candies,
         Chocolates,

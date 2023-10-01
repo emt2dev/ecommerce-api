@@ -23,6 +23,6 @@ namespace api.DAL.DTOs
         public bool IsSeasonal { get; set; }
         public bool IsHoliday { get; set; }
         public bool IsService { get; set; }
-        public string ProductType { get; set; }
+        public bool IsDigital { get; set; }
     }
 }

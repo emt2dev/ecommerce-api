@@ -40,7 +40,7 @@ namespace api.DAL.Models
         public bool IsSeasonal { get; set; }
         public bool IsHoliday { get; set; }
         public bool IsService { get; set; }
-        public string ProductType { get; set; }
+        public bool IsDigital { get; set; }
 
         // Methods
         public ProductStylesModel(NewProductStyleModelDTO DTO)
@@ -51,7 +51,7 @@ namespace api.DAL.Models
             this.SalePrice = 0;
 
             // DTO
-            this.ProductType = DTO.ProductType;
+            this.IsDigital = DTO.IsDigital;
             this.IsPromotional = DTO.IsPromotional;
             this.IsSeasonal = DTO.IsSeasonal;
             this.IsHoliday = DTO.IsHoliday;

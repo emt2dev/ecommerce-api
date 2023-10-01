@@ -78,7 +78,8 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        adding => adding.AllowAnyHeader()
+        adding => adding.WithOrigins("http://localhost:4200")
+        .AllowAnyHeader()
         .AllowAnyOrigin()
         .AllowAnyMethod());
 });
@@ -167,9 +168,6 @@ builder.Services.AddHealthChecks()
 
 var app = builder.Build();
 
-app.UseCors("AllowAll");
-app.UseMiddleware<ExceptionHandler>();
-app.UseHttpsRedirection();
 
 /* Add Caching Part Two */
 app.UseResponseCaching();
@@ -261,6 +259,11 @@ static Task WriteResponse(HttpContext context, HealthReport HR)
 
     return context.Response.WriteAsync(Encoding.UTF8.GetString(memoryStream.ToArray()));
 }
+
+
+app.UseCors("AllowAll");
+app.UseMiddleware<ExceptionHandler>();
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();

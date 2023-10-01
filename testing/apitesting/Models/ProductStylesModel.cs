@@ -42,7 +42,7 @@ namespace apitesting.Models
         public bool IsSeasonal { get; set; }
         public bool IsHoliday { get; set; }
         public bool IsService { get; set; }
-        public string ProductType { get; set; } // polymorphic association
+        public bool IsDigital { get; set; } // polymorphic association
 
         // Methods
         public ProductStylesModel(NewProductStyleModelDTO DTO)
@@ -53,7 +53,7 @@ namespace apitesting.Models
             this.SalePrice = 0;
 
             // DTO
-            this.ProductType = DTO.ProductType;
+            this.IsDigital = DTO.IsDigital;
             this.IsPromotional = DTO.IsPromotional;
             this.IsSeasonal = DTO.IsSeasonal;
             this.IsHoliday = DTO.IsHoliday;
