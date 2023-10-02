@@ -27,6 +27,10 @@ builder.Services.AddSwaggerGen();
 /*
  * Dependencies
  */
+
+// Azure Connection
+//var CONNECTION_STRING = builder.Configuration.GetConnectionString("API_Azure");
+
 // DATABASE, MSSQL
 var CONNECTION_STRING = builder.Configuration.GetConnectionString("API_Connection"); // replace with your own connection string
 
