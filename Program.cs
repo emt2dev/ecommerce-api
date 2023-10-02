@@ -168,6 +168,9 @@ builder.Services.AddHealthChecks()
 
 var app = builder.Build();
 
+app.UseCors("AllowAll");
+app.UseMiddleware<ExceptionHandler>();
+app.UseHttpsRedirection();
 
 /* Add Caching Part Two */
 app.UseResponseCaching();
@@ -259,11 +262,6 @@ static Task WriteResponse(HttpContext context, HealthReport HR)
 
     return context.Response.WriteAsync(Encoding.UTF8.GetString(memoryStream.ToArray()));
 }
-
-
-app.UseCors("AllowAll");
-app.UseMiddleware<ExceptionHandler>();
-app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
